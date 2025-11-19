@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function CrearCuentaPage() {
+  const navigate = useNavigate();
   // Estado para alternar la visibilidad de la contraseña
   const [showPassword, setShowPassword] = useState(false);
 
@@ -163,7 +165,7 @@ export default function CrearCuentaPage() {
           {/* Footer */}
           <footer className="mt-8 text-center">
             <p className="text-sm text-[#666666] dark:text-[#a0a0a0]">
-              ¿Ya tienes una cuenta? <a className="font-semibold text-[#135bec] hover:underline" href="#">Inicia sesión</a>
+              ¿Ya tienes una cuenta? <a onClick={()=>{navigate("/");}}  className="font-semibold text-[#135bec] hover:underline">Inicia sesión</a>
             </p>
           </footer>
 

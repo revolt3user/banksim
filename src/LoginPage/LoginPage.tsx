@@ -1,6 +1,9 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import assets from '../assets';
 
 export default function LoginPage() {
+  const navigate = useNavigate();
   // Estado para manejar la visibilidad de la contraseña
   const [showPassword, setShowPassword] = useState(false);
 
@@ -37,7 +40,7 @@ export default function LoginPage() {
             {/* Logo / Icon */}
             <div className="flex justify-center mb-8">
               <div className="flex items-center justify-center h-16 w-16 bg-[#004A99] rounded-full">
-                <span className="material-symbols-outlined text-white text-[36px]">account_balance</span>
+                <div className='text-white text-[36px]' dangerouslySetInnerHTML={{ __html: assets.svg.accountBalance }} />
               </div>
             </div>
 
@@ -87,7 +90,7 @@ export default function LoginPage() {
             </div>
 
             {/* Submit Button */}
-            <div className="py-6">
+            <div onClick={()=>{navigate("/account");}} className="py-6">
               <button className="flex min-w-[84px] w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-5 bg-[#004A99] text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-[#004A99]/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#004A99] focus:ring-offset-[#F5F7FA] dark:focus:ring-offset-[#101622] transition-colors">
                 <span className="truncate">Iniciar Sesión</span>
               </button>
@@ -95,11 +98,11 @@ export default function LoginPage() {
 
             {/* Footer Links */}
             <div className="flex flex-col items-center gap-4 text-center">
-              <a className="text-[#004A99] text-sm font-medium hover:underline" href="#">
+              <a onClick={()=>{navigate("/register");}} className="text-[#004A99] text-sm font-medium hover:underline">
                 ¿Olvidaste tu contraseña?
               </a>
               <p className="text-[#6b7280] dark:text-[#9ca3af] text-sm">
-                ¿No tienes cuenta? <a className="text-[#004A99] font-medium hover:underline" href="#">Regístrate</a>
+                ¿No tienes cuenta? <a onClick={()=>{navigate("/register");}} className="text-[#004A99] font-medium hover:underline">Regístrate</a>
               </p>
             </div>
 
