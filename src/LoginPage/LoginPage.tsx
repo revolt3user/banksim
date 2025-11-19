@@ -40,7 +40,7 @@ export default function LoginPage() {
             {/* Logo / Icon */}
             <div className="flex justify-center mb-8">
               <div className="flex items-center justify-center h-16 w-16 bg-[#004A99] rounded-full">
-                <assets.svg.accountBalance className="text-white"></assets.svg.accountBalance>
+                <assets.accountBalance className="text-white"></assets.accountBalance>
               </div>
             </div>
 
